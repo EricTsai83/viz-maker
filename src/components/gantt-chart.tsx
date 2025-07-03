@@ -32,8 +32,9 @@ interface GanttChartProps {
   className?: string;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const CustomBar = (props: any) => {
-  const { x, y, width, height, payload, progress, color } = props;
+  const { x, y, width, height, payload, color } = props;
   // 使用 payload 來獲取完整的資料物件
   const adjustedX = x + (payload.startPosition * width) / payload.duration;
 
@@ -59,6 +60,7 @@ const CustomBar = (props: any) => {
   );
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const CustomTooltip = ({ active, payload }: any) => {
   if (active && payload && payload.length) {
     const data = payload[0].payload;
